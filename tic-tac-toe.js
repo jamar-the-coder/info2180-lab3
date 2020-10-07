@@ -8,6 +8,8 @@ window.onload = function (){
 	var gridDict = {};
 
 	var gameState = ["", "", "", "", "", "", "", "", ""];
+	
+	var status = document.getElementById("status");
 
 
 	const winningConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
@@ -47,7 +49,7 @@ window.onload = function (){
                ) 
                { 
 						
-				let status = document.getElementById("status");
+				
 				status.classList.add("you-won");
                    if (turn == 1)
                    {			
@@ -65,14 +67,14 @@ window.onload = function (){
 				this.innerHTML = "X";
 				this.classList.add("X");
 			    turn = 2;
-				console.log("Penis is big");
+				
 			}
                else if (turn == 2)
                {
 				this.innerHTML = "O";
 				this.classList.add("O");
 				turn = 1;	
-				console.log("Penis is small");
+				
 						
 						
 			}
@@ -89,6 +91,26 @@ window.onload = function (){
         gridDoc[i].addEventListener("mouseout", function(){
 	    	this.classList.remove("hover");
 	    });
+
+		
+		document.querySelector("button").addEventListener("click", function(){
+			
+			for (var square of gridDoc) {
+			
+			square.classList.remove("X");
+			square.classList.remove("O");
+			square.textContent = "";
+			}
+			
+			gameState = ["", "", "", "", "", "", "", "", ""];
+			status.textContent = "Move your mouse over a square and click to play an X or an O.";
+			
+
+			
+			
+		});
+	
+
 
 	}	
 	
