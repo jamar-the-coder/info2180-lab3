@@ -31,7 +31,7 @@ window.onload = function (){
 						
 				{
 					gameState[key] = turn;
-					// console.log(gameState);
+			
 							
 				}
 			}
@@ -66,6 +66,7 @@ window.onload = function (){
                {
 				this.innerHTML = "X";
 				this.classList.add("X");
+				this.style.pointerEvents = 'none';
 			    turn = 2;
 				
 			}
@@ -73,6 +74,7 @@ window.onload = function (){
                {
 				this.innerHTML = "O";
 				this.classList.add("O");
+				this.style.pointerEvents = 'none';
 				turn = 1;	
 				
 						
@@ -96,12 +98,13 @@ window.onload = function (){
 		document.querySelector("button").addEventListener("click", function(){
 			
 			for (var square of gridDoc) {
-			
+			square.style.pointerEvents = 'auto';
 			square.classList.remove("X");
 			square.classList.remove("O");
 			square.textContent = "";
 			}
 			
+			turn = 1;
 			gameState = ["", "", "", "", "", "", "", "", ""];
 			status.textContent = "Move your mouse over a square and click to play an X or an O.";
 			
