@@ -1,10 +1,11 @@
+"use strict";
 window.onload = function (){
 
 	var turn = 1;
 	
 	var gridDoc = document.querySelectorAll("#board div");
 	
-	var gridDict = {}
+	var gridDict = {};
 
 	var gameState = ["", "", "", "", "", "", "", "", ""];
 
@@ -28,51 +29,54 @@ window.onload = function (){
 						
 				{
 					gameState[key] = turn;
-					console.log(gameState);
+					// console.log(gameState);
 							
 				}
+			}
 						
                 if 
                 (
-					gameState[0] == turn && gameState[1] == turn && gameState[2] == turn ||
-					gameState[3] == turn && gameState[4] == turn && gameState[5] == turn ||
-					gameState[6] == turn && gameState[7] == turn && gameState[8] == turn ||
-					gameState[0] == turn && gameState[3] == turn && gameState[6] == turn ||
-					gameState[1] == turn && gameState[4] == turn && gameState[7] == turn ||
-					gameState[2] == turn && gameState[5] == turn && gameState[8] == turn ||
-					gameState[0] == turn && gameState[4] == turn && gameState[8] == turn ||
-					gameState[2] == turn && gameState[4] == turn && gameState[6] == turn
-                ) 
-                { 
-							
-					let status = document.getElementById("status");
-					status.classList.add("you-won");
-                    if (turn == 1)
-                    {			
-						status.textContent = "Congratulations! X is the winner!"; 			
-					}	
-                    else
-                    {		
-						status.textContent = "Congratulations! O is the winner!"; 			
-					}
-				
-				}
+				gameState[0] == turn && gameState[1] == turn && gameState[2] == turn ||
+				gameState[3] == turn && gameState[4] == turn && gameState[5] == turn ||
+				gameState[6] == turn && gameState[7] == turn && gameState[8] == turn ||
+				gameState[0] == turn && gameState[3] == turn && gameState[6] == turn ||
+				gameState[1] == turn && gameState[4] == turn && gameState[7] == turn ||
+				gameState[2] == turn && gameState[5] == turn && gameState[8] == turn ||
+				gameState[0] == turn && gameState[4] == turn && gameState[8] == turn ||
+				gameState[2] == turn && gameState[4] == turn && gameState[6] == turn
+               ) 
+               { 
 						
-                if (turn == 1)
-                {
-					this.innerHTML = "X";
-					this.classList.add("X");
-				    turn = 2;
+				let status = document.getElementById("status");
+				status.classList.add("you-won");
+                   if (turn == 1)
+                   {			
+					status.textContent = "Congratulations! X is the winner!"; 			
+				}	
+                   else
+                   {		
+					status.textContent = "Congratulations! O is the winner!"; 			
 				}
-                else
-                {
-					this.innerHTML = "O";
-					this.classList.add("O");
-					turn = 1;	
-				}
-							
-							
-		    }
+			
+			}
+					
+               if (turn == 1)
+               {
+				this.innerHTML = "X";
+				this.classList.add("X");
+			    turn = 2;
+				console.log("Penis is big");
+			}
+               else if (turn == 2)
+               {
+				this.innerHTML = "O";
+				this.classList.add("O");
+				turn = 1;	
+				console.log("Penis is small");
+						
+						
+			}
+		
 	    });
 	
 		
