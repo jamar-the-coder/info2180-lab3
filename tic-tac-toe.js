@@ -5,12 +5,12 @@ window.onload = function (){
 	
 	var gridDoc = document.querySelectorAll("#board div");
 	
-	emptyArr = [];
+	var emptyArr = [];
 	
 		for ( var i = 0; i < gridDoc.length; i++ ){
 			
 			gridDoc[i].classList.add("square");
-				console.log(gridDoc);
+				
 				
 				gridDoc[i].addEventListener("click", function(){
 					
@@ -39,10 +39,25 @@ window.onload = function (){
 
 	});
 	
-		}
+		
+	
+	gridDoc[i].addEventListener("mouseover", function(){
+					this.classList.add("hover");
+					
+					
+					
+				});
+				
+				
+	gridDoc[i].addEventListener("mouseout", function(){
+					this.classList.remove("hover");
+	
+	
+	
+		});
 		
 		
-		
+	}	
 	
 		
 		
@@ -56,4 +71,5 @@ window.onload = function (){
 		
 		
 		
+
 }
